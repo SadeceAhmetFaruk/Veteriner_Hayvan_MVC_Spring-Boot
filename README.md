@@ -1,6 +1,12 @@
-**Spring Boot DevTools** :  Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
+		Proje detayları 
 
-**Lombok :**Java annotation library which helps to reduce boilerplate code.
+Veteriner MVC uygulaması olucak olup login,validation gibi kısımları içermektedir	
+
+		Projemde kullanılan kütüphaneler:
+
+**Spring Boot DevTools**  :  Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
+
+**Lombok :**Java annotaton library which helps to reduce boilerplate code.
 
 **Spring Web WEB Build web,** including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
 
@@ -10,7 +16,7 @@
 
 **Spring Data JPA** SQL Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
 
-**Spring Native [Experimental] DEVELOPER TOOLS** Incubating support for compiling Spring applications to native executables using the GraalVM native-image compiler.
+**Spring Native [Experimental] ** Incubating support for compiling Spring applications to native executables using the GraalVM native-image compiler.
 
 **MySQL Driver** SQL MySQL JDBC and R2DBC driver.
 
