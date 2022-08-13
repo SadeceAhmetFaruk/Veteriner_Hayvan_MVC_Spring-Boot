@@ -40,9 +40,9 @@ ServiceIMP Packages: Service paketi içinde bulunur ve servisdeki fonksiyonları
 - HayvanSahibiServiceImp: Hayvan Sahibi servisine ait fonksiyonları içerir.
 - HayvanServiceImp: Hayvan servisine ait fonksiyonları içerir.
 
+----------------------------------------------
 
-
-/                         Projemde kullanılan kütüphaneler:
+Projemde kullanılan kütüphaneler:
 
 -	**Spring Boot DevTools**  :  Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
 
