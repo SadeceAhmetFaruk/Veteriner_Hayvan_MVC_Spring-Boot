@@ -12,9 +12,9 @@ Model Packages :
 ------------------------------------------
 
 Repository Packages :
--	HayvanHayvanSahibiRepository:
--	HayvanRepository:
--	HayvanSahibiRepository: Hayvan sahiplerin database ile iliş
+-	HayvanHayvanSahibiRepository:Hayvan ve Hayvan sahiplerinin arasındaki ilişkiyi sorgular.
+-	HayvanRepository:Hayvanların database ilişkileri sorgular.
+-	HayvanSahibiRepository: Hayvan sahiplerin database ile ilişkilerini  sağlar
 
 ------------------------------------------
 

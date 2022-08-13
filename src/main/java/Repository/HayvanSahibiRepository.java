@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface HayvanSahibiRepository extends JpaRepository<HayvanSahibi,Long> {
-    List<HayvanSahibi> findByNameHayvan(String name);
+    HayvanSahibi findByNameHayvanSahibi(String name);
 }

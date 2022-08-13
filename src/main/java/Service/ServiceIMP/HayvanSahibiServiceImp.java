@@ -1,7 +1,6 @@
 package Service.ServiceIMP;
 
 
-import Model.HayvanHayvanSahibi;
 import Model.HayvanSahibi;
 import Repository.HayvanSahibiRepository;
 import org.springframework.stereotype.Service;
@@ -29,8 +28,8 @@ public class HayvanSahibiServiceImp implements HayvanSahibiService {
     }
     /* Burası kaldı bunu doldur*/
     @Override
-    public List<HayvanSahibi> findByNameHayvanSahibi(String name) {
-        return hayvanSahibiRepository.findByNameHayvan(name);
+    public HayvanSahibi findByNameHayvanSahibi(String name) {
+        return hayvanSahibiRepository.findByNameHayvanSahibi(name);
     }
 
     @Override

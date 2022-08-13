@@ -2,6 +2,8 @@ package Model;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -18,6 +20,12 @@ public class HayvanSahibi {
     @Column(name = "name",nullable = false)
     private String name;
 
+    @Column(name = "username",nullable = false)
+    private String username;
+
+    @Column(name = "password",nullable = false)
+    private String password;
+
     @Column(name = "contact_info",nullable = false)
     private String contact_info;
 
@@ -30,6 +38,9 @@ public class HayvanSahibi {
     @Email
     @Column(name = "mail",nullable = false)
     private String mail;
+
+    @Column(name = "role")
+    private Role role;
 
 
 }

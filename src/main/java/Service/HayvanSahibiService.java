@@ -18,7 +18,8 @@ public interface HayvanSahibiService {
 
     //find by name HayvanSahibi
 
-    List<HayvanSahibi> findByNameHayvanSahibi(String name);
+
+    HayvanSahibi findByNameHayvanSahibi(String name);
 
     //Number of HayvanSahibi
     Long numberOfHayvanSahibi();

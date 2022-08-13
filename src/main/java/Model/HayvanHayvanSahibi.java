@@ -25,4 +25,7 @@ public class HayvanHayvanSahibi {
     @JoinColumn(name="user_id", referencedColumnName = "id")
     private HayvanSahibi hayvanSahibi;
 
+    @Column(name="acceptance_date")
+    private LocalDateTime acceptance_date;
+
 }
