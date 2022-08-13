@@ -1,9 +1,11 @@
 
-		Proje detayları 
+Proje detayları 
 
-Veteriner MVC uygulaması olucak olup login,validation gibi kısımları içermektedir	
+Veteriner MVC uygulaması olucak olup login,validation gibi kısımları içermektedir
 
-		Projemde kullanılan kütüphaneler:
+
+
+Projemde kullanılan kütüphaneler:
 
 	**Spring Boot DevTools**  :  Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
 
@@ -19,8 +21,8 @@ Veteriner MVC uygulaması olucak olup login,validation gibi kısımları içerme
 
 	**Spring Native [Experimental] ** Incubating support for compiling Spring applications to native executables using the GraalVM native-image compiler.
 
-**MySQL Driver** SQL MySQL JDBC and R2DBC driver.
+	**MySQL Driver** SQL MySQL JDBC and R2DBC driver.
 
-**Java Mail Sende**r I/O Send email using Java Mail and Spring Framework's JavaMailSender.
+	**Java Mail Sende**r I/O Send email using Java Mail and Spring Framework's JavaMailSender.
 
-**Validation** I/O Bean Validation with Hibernate validator.
+	**Validation** I/O Bean Validation with Hibernate validator.
