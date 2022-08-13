@@ -1,5 +1,11 @@
 package Controller;
 
+import Model.Hayvan;
+import Model.HayvanSahibi;
+import Service.HayvanHayvanSahibiService;
+import Service.HayvanSahibiService;
+import Service.HayvanService;
+import config.StringResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -7,60 +13,72 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AdminController {
+
+    private final HayvanHayvanSahibiService hayvanHayvanSahibiService;
+    private final HayvanService hayvanService;
+    private final HayvanSahibiService hayvanSahibiService;
+
+    public AdminController(HayvanHayvanSahibiService hayvanHayvanSahibiService, HayvanService hayvanService, HayvanSahibiService hayvanSahibiService) {
+        this.hayvanHayvanSahibiService = hayvanHayvanSahibiService;
+        this.hayvanService = hayvanService;
+        this.hayvanSahibiService = hayvanSahibiService;
+    }
+
+
     @PutMapping("/api/admin/user-update")
-    public ResponseEntity<?> updateUser(@RequestBody User user) {
-        User existUser = userService.findByUsername(user.getUsername());
-        if (existUser != null && !existUser.getId().equals(user.getId())) {
+    public ResponseEntity<?> updateHayvanSahibi(@RequestBody HayvanSahibi hayvanSahibi) {
+        HayvanSahibi existUser = hayvanSahibiService.findByNameHayvanSahibi(hayvanSahibi.getUsername());
+        if (existUser != null && !existUser.getId().equals(hayvanSahibi.getId())) {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
-        return new ResponseEntity<>(userService.updateUser(user), HttpStatus.CREATED);
+        return new ResponseEntity<>(hayvanSahibiService.updateHayvanSahibi(hayvanSahibi), HttpStatus.CREATED);
     }
 
 
     @DeleteMapping("/api/admin/user-delete")
-    public ResponseEntity<?> deleteUser(@RequestBody User user){
-        userService.DeleteUserByID(user.getId());
+    public ResponseEntity<?> deleteUser(@RequestBody HayvanSahibi hayvanSahibi){
+        hayvanSahibiService.DeleteHayvanSahibiByID(hayvanSahibi.getId());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/api/admin/user-all")
-    public ResponseEntity<?> findAllUsers(){
-        return new ResponseEntity<>(userService.ListAllUsers(), HttpStatus.OK);
+    public ResponseEntity<?> findAllHayvanSahibi(){
+        return new ResponseEntity<>(hayvanSahibiService.ListAllHayvanSahibi(), HttpStatus.OK);
     }
 
     @GetMapping("/api/admin/user-number")
-    public ResponseEntity<?> numberOfUsers(){
-        Long number = userService.numberOfUsers();
+    public ResponseEntity<?> numberOfHayvanSahibi(){
+        Long number = hayvanSahibiService.numberOfHayvanSahibi();
         StringResponse response = new StringResponse();
         response.setResponse(number.toString());
         //to return it, we will use String Response because long is not a suitable response for rest api
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     @PostMapping("/api/admin/agreement-create")
-    public ResponseEntity<?> createAgreement(@RequestBody Agreement agreement){
-        return new ResponseEntity<>(agreementService.SaveAgreement(agreement), HttpStatus.CREATED);
+    public ResponseEntity<?> createHayvanAlımı(@RequestBody Hayvan hayvan){
+        return new ResponseEntity<>(hayvanService.SaveHayvan(hayvan), HttpStatus.CREATED);
     }
 
     @PutMapping("/api/admin/agreement-update")
-    public ResponseEntity<?> updateAgreement(@RequestBody Agreement agreement){
-        return new ResponseEntity<>(agreementService.SaveAgreement(agreement), HttpStatus.CREATED);
+    public ResponseEntity<?> updateHayvan(@RequestBody Hayvan hayvan){
+        return new ResponseEntity<>(hayvanService.SaveHayvan(hayvan), HttpStatus.CREATED);
     }
 
     //This can be also @DeleteMapping.
-    @PostMapping("/api/admin/product-delete")
-    public ResponseEntity<?> deleteProduct(@RequestBody Agreement agreement){
-        agreementService.DeleteAgrementByID(agreement.getId());
+    @PostMapping("/api/admin/hayvan-delete")
+    public ResponseEntity<?> deleteHayvan(@RequestBody Hayvan hayvan){
+        hayvanService.DeleteHayvanByID(hayvan.getId());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("/api/admin/product-all")
-    public ResponseEntity<?> findAllAgreement(){
-        return new ResponseEntity<>(agreementService.ListAllAgreement(), HttpStatus.OK);
+    @GetMapping("/api/admin/hayvan-all")
+    public ResponseEntity<?> findAllHayvan(){
+        return new ResponseEntity<>(hayvanService.ListAllHayvan(), HttpStatus.OK);
     }
 
     @GetMapping("/api/admin/product-number")
     public ResponseEntity<?> numberOfAgreement(){
-        Long number = agreementService.numberOfAgrements();
+        Long number = hayvanService.numberOfHayvan();
         StringResponse response = new StringResponse();
         response.setResponse(number.toString());
         return new ResponseEntity<>(response, HttpStatus.OK);
@@ -68,12 +86,12 @@ public class AdminController {
 
     @GetMapping("/api/admin/UserAgreements-all")
     public ResponseEntity<?> findAllUserAgreements(){
-        return new ResponseEntity<>(userAgreementService.findAllUserAgreements(), HttpStatus.OK);
+        return new ResponseEntity<>(hayvanHayvanSahibiService.findAllHayvanHayvanSahibi(), HttpStatus.OK);
     }
 
     @GetMapping("api/admin/UserAgreements-number")
     public ResponseEntity<?> numberOfUserAgreements(){
-        Long number = userAgreementService.numberOfUserAgreements();
+        Long number = hayvanHayvanSahibiService.numberOfHayvanHayvanSahibi();
         StringResponse response = new StringResponse();
         response.setResponse(number.toString());
         return new ResponseEntity<>(response, HttpStatus.OK);

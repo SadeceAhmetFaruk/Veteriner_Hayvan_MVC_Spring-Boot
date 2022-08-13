@@ -20,7 +20,7 @@ public interface HayvanService {
     List<Hayvan> findByNameHayvan(String name);
 
     //Create and update Hayvan
-    Hayvan SaveHayvan(HayvanSahibi hayvanSahibi);
+    Hayvan SaveHayvan(Hayvan   hayvan);
 
     //Delete By ID
     void DeleteHayvanByID(Long hayvan_id);

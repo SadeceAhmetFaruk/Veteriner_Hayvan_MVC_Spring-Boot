@@ -37,7 +37,7 @@ public class HayvanServiceImp implements HayvanService {
     }
 
     @Override
-    public Hayvan SaveHayvan(HayvanSahibi hayvanSahibi) {
+    public Hayvan SaveHayvan(Hayvan hayvan) {
         return null;
     }
 

@@ -18,7 +18,31 @@ Repository Packages :
 
 ------------------------------------------
 
-Projemde kullanılan kütüphaneler:
+Config Packages :
+- StringResponse: Geriye bir String döndürülmek için yapılmıştır.
+
+------------------------------------------
+
+Controller Packages : Post,Get,Put temel controller yapıısını içerir
+- AdminController: Adminler için silme yükleme gibi birçok userda bulunmayan işi yapmasının controlleridir.
+- UserController : User Controller ise kendi alanında bulunan işlemleri yapabilir.
+
+-------------------------------------------
+Service Packages : 
+- HayvanService : Hayvanlara ait listeleme,update,delete gibi CRUD işlemleri içeren Servistir.
+- HayvanSahibiService : Hayvan sahiplerine ait CRUD işlemlerini içerir.
+- HayvanHayvanSahibiService : Hayvan ve sahipleri arasındaki ilişkiyi sorgulayan ve yazdıran servistir.
+
+--------------------------------------------
+
+ServiceIMP Packages: Service paketi içinde bulunur ve servisdeki fonksiyonları içerir.
+- HayvanHayvanSahibiServiceImp: Hayvan ve sahipleri arasındaki fonksyionları içermektedir.
+- HayvanSahibiServiceImp: Hayvan Sahibi servisine ait fonksiyonları içerir.
+- HayvanServiceImp: Hayvan servisine ait fonksiyonları içerir.
+
+
+
+/                         Projemde kullanılan kütüphaneler:
 
 -	**Spring Boot DevTools**  :  Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
 
