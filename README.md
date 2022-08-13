@@ -5,9 +5,9 @@ Veteriner MVC uygulaması olucak olup login,validation gibi kısımları içerme
 ------------------------------------------
 
 Model Packages : 
--       Hayvan: Hayvana ait olan bilgilerin oldugu modeldir.
--       HayvanSahibi: Hayvan sahibine ait bilgilerin oldugu modeldir
--       HayvanHayvanSahibi: Hayvan ile sahibi arasındaki ilişkisel modeldir
+- Hayvan: Hayvana ait olan bilgilerin oldugu modeldir.
+- HayvanSahibi: Hayvan sahibine ait bilgilerin oldugu modeldir
+- HayvanHayvanSahibi: Hayvan ile sahibi arasındaki ilişkisel modeldir
 
 ------------------------------------------
 
