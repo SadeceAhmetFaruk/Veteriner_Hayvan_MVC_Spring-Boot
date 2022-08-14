@@ -3,6 +3,7 @@ package Service;
 import Model.Hayvan;
 import Model.HayvanHayvanSahibi;
 import Model.HayvanSahibi;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public interface HayvanSahibiService {
     //find by name HayvanSahibi
 
 
-    HayvanSahibi findByNameHayvanSahibi(String name);
+    HayvanSahibi findByNameHayvanSahibi(String name) throws UsernameNotFoundException;
 
     //Number of HayvanSahibi
     Long numberOfHayvanSahibi();

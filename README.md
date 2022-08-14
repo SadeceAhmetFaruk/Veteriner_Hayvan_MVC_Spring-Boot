@@ -1,7 +1,7 @@
 
 Proje detayları 
 
-Veteriner MVC uygulaması olucak olup login,validation gibi kısımları içermektedir
+Veteriner MVC uygulaması olucak CRUD işlemlerini içermektedir.Testler Test Clası altında bulunmaktadır.
 ------------------------------------------
 
 Model Packages : 
