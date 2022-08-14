@@ -2,6 +2,17 @@
 Proje detayları 
 
 Veteriner MVC uygulaması olucak CRUD işlemlerini içermektedir.Testler Test Clası altında bulunmaktadır.
+Setup: 
+
+1)ya projeyi indidip indirdiğiniz dizin üzerinden işlem yapınız veya dizini clon ediniz
+
+    git clone --- 
+  
+2) clone ettiğiniz dizinde komutlarını çalıştırınız:
+
+       mvn compile 
+    
+       mvn run 
 ------------------------------------------
 
 Model Packages : 
