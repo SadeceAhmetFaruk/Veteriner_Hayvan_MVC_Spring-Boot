@@ -47,12 +47,9 @@ public class UserController {
             //logout will also use here so we should return ok http status.
             return ResponseEntity.ok(principal);
         }
-        UsernamePasswordAuthenticationToken authenticationToken =
-                (UsernamePasswordAuthenticationToken) principal;
-        HayvanSahibi hayvanSahibi = hayvanSahibiService.findByNameHayvanSahibi(authenticationToken.getName());
-        hayvanSahibi.setToken(tokenProvider.generateToken(authenticationToken));
 
-        return new ResponseEntity<>(hayvanSahibi, HttpStatus.OK);
+        HayvanSahibi hayvanSahibi = hayvanSahibiService.findByNameHayvanSahibi(principal.getName());
+               return new ResponseEntity<>(hayvanSahibi, HttpStatus.OK);
     }
     @PostMapping("/api/user/purchase")
     public ResponseEntity<?> AddAnimal(@RequestBody HayvanHayvanSahibi hayvanHayvanSahibi){
