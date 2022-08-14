@@ -1,6 +1,5 @@
 
-Proje detayları 
-
+![image](https://user-images.githubusercontent.com/65506131/184534620-6c61881b-7864-4cae-a335-33b55a835734.png)
 Veteriner MVC uygulaması olucak CRUD işlemlerini içermektedir.Testler Test Clası altında bulunmaktadır.
 Setup: 
 
@@ -8,11 +7,11 @@ Setup:
 
     git clone --- 
   
-2) clone ettiğiniz dizinde komutlarını çalıştırınız:
+2)Clone ettiğiniz dizinde komutlarını çalıştırınız:
 
-       mvn compile 
+    mvn compile 
     
-       mvn run 
+    mvn run 
 ------------------------------------------
 
 Model Packages : 
