@@ -8,7 +8,10 @@ import Service.HayvanService;
 import config.StringResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 
 
 @RestController
@@ -24,6 +27,13 @@ public class AdminController {
         this.hayvanSahibiService = hayvanSahibiService;
     }
 
+    @GetMapping("/")
+    String greetingPage(ModelMap map, @RequestParam(required = false) String name) {
+        name = name == null || name.trim().equals("") ? "Thymeleaf" : name;
+        String message = String.format("Merhaba %s!", name);
+        map.put("message", message);
+        return "index";
+    }
 
     @PutMapping("/api/admin/user-update")
     public ResponseEntity<?> updateHayvanSahibi(@RequestBody HayvanSahibi hayvanSahibi) {
@@ -54,12 +64,12 @@ public class AdminController {
         //to return it, we will use String Response because long is not a suitable response for rest api
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-    @PostMapping("/api/admin/agreement-create")
+    @PostMapping("/api/admin/HayvanAlımı-create")
     public ResponseEntity<?> createHayvanAlımı(@RequestBody Hayvan hayvan){
         return new ResponseEntity<>(hayvanService.SaveHayvan(hayvan), HttpStatus.CREATED);
     }
 
-    @PutMapping("/api/admin/agreement-update")
+    @PutMapping("/api/admin/HayvanAlımı-update")
     public ResponseEntity<?> updateHayvan(@RequestBody Hayvan hayvan){
         return new ResponseEntity<>(hayvanService.SaveHayvan(hayvan), HttpStatus.CREATED);
     }
@@ -76,21 +86,21 @@ public class AdminController {
         return new ResponseEntity<>(hayvanService.ListAllHayvan(), HttpStatus.OK);
     }
 
-    @GetMapping("/api/admin/product-number")
-    public ResponseEntity<?> numberOfAgreement(){
+    @GetMapping("/api/admin/HayvanAlımı-number")
+    public ResponseEntity<?> numberOfHayvanAlımı(){
         Long number = hayvanService.numberOfHayvan();
         StringResponse response = new StringResponse();
         response.setResponse(number.toString());
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping("/api/admin/UserAgreements-all")
+    @GetMapping("/api/admin/HayvanAlımı-all")
     public ResponseEntity<?> findAllUserAgreements(){
         return new ResponseEntity<>(hayvanHayvanSahibiService.findAllHayvanHayvanSahibi(), HttpStatus.OK);
     }
 
-    @GetMapping("api/admin/UserAgreements-number")
-    public ResponseEntity<?> numberOfUserAgreements(){
+    @GetMapping("api/admin/HayvanAlımı-number")
+    public ResponseEntity<?> numberOfHayvanAlımıtotal(){
         Long number = hayvanHayvanSahibiService.numberOfHayvanHayvanSahibi();
         StringResponse response = new StringResponse();
         response.setResponse(number.toString());

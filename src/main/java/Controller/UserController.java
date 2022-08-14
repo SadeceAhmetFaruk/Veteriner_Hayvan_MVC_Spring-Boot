@@ -9,10 +9,8 @@ import Service.HayvanSahibiService;
 import Service.HayvanService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.time.LocalDateTime;
@@ -29,7 +27,15 @@ public class UserController {
         this.hayvanService = hayvanService;
         this.hayvanHayvanSahibiService = hayvanHayvanSahibiService;
     }
-    /* Hayvan SAh*/
+    @GetMapping("/")
+    String greetingPage(ModelMap map, @RequestParam(required = false) String name) {
+        name = name == null || name.trim().equals("") ? "Thymeleaf" : name;
+        String message = String.format("Merhaba %s!", name);
+        map.put("message", message);
+        return "index";
+    }
+
+    /* Hayvan SAhibi*/
     @PostMapping("/api/user/registration")
     public ResponseEntity<?> register(@RequestBody HayvanSahibi hayvanSahibi){
         if(hayvanSahibiService.findByNameHayvanSahibi(hayvanSahibi.getUsername())!=null){
