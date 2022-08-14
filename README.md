@@ -5,7 +5,7 @@ Setup:
 
 1)ya projeyi indirip indirdiğiniz dizin üzerinden işlem yapınız veya dizini clon ediniz
 
-    git clone --- 
+    git clone https://github.com/SadeceAhmetFaruk/Veteriner_Hayvan_MVC_Spring-Boot.git
   
 2)Clone ettiğiniz dizinde komutlarını çalıştırınız:
 
